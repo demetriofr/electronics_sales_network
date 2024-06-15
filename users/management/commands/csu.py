@@ -16,8 +16,11 @@ class Command(BaseCommand):
 
         # Create the superuser
         csu = User.objects.create(
-            username=getenv('CSU_USERNAME'),
+            email=getenv('CSU_USERNAME'),
             password=getenv('CSU_PASSWORD'),
+
+            first_name=getenv('CSU_FIRST_NAME'),
+            last_name=getenv('CSU_LAST_NAME'),
 
             is_staff=True,
             is_superuser=True,
