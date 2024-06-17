@@ -1,0 +1,566 @@
+{
+	"info": {
+		"_postman_id": "2fa71915-2fd2-4656-8fc9-832858377a64",
+		"name": "electronics_sales_network",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33275364"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "token",
+					"item": [
+						{
+							"name": "token-csu",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"dmitriy.a.frolov@gmail.com\",\n    \"password\": \"NEWworld42\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8000/users/token/"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "create 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Laptop\",\n    \"model\": \"XYZ123\",\n    \"release_date\": \"2024-06-13\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "create 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Smartphone\",\n    \"model\": \"ABC987\",\n    \"release_date\": \"2024-06-14\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "create 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Smartclock\",\n    \"model\": \"DEF456\",\n    \"release_date\": \"2024-06-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "create exception",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Laptop %\",\n    \"model\": \"XYZ123\",\n    \"release_date\": \"2024-06-13\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "read",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/products/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Laptop 2\",\n    \"model\": \"XYZ123\",\n    \"release_date\": \"2024-06-13\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/products/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "update exception",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Laptop *\",\n    \"model\": \"XYZ123\",\n    \"release_date\": \"2024-06-13\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/products/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/products/3/"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/products/"
+					},
+					"response": []
+				},
+				{
+					"name": "list with page_size=1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/products/?page_size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list with filter id>=2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/products/?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "network_links",
+			"item": [
+				{
+					"name": "create level=0",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Factory\",\n    \"previous_network_link\": null,\n    \"contact_info\": {\n        \"email\": \"test@test.ov\",\n        \"country\": \"A\",\n        \"city\": \"X\",\n        \"street\": \"ABC\",\n        \"house_number\": \"123\"\n    },\n    \"network_link_products\": [\n        {\n            \"product\": 1,\n            \"debt\": 100.04\n        },\n        {\n            \"product\": 2,\n            \"debt\": 150.03\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/network_links/"
+					},
+					"response": []
+				},
+				{
+					"name": "create level=1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Retail network 1\",\n    \"previous_network_link\": 1,\n    \"contact_info\": {\n        \"email\": \"test@test.ov\",\n        \"country\": \"A\",\n        \"city\": \"X\",\n        \"street\": \"ABC\",\n        \"house_number\": \"1234\"\n    },\n    \"network_link_products\": [\n        {\n            \"product\": 1,\n            \"debt\": 100.04\n        },\n        {\n            \"product\": 2,\n            \"debt\": 150.03\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/network_links/"
+					},
+					"response": []
+				},
+				{
+					"name": "create level=2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Individual 1\",\n    \"previous_network_link\": 2,\n    \"contact_info\": {\n        \"email\": \"test3@test3.ov\",\n        \"country\": \"B\",\n        \"city\": \"Y\",\n        \"street\": \"ABC\",\n        \"house_number\": \"12345\"\n    },\n    \"network_link_products\": [\n        {\n            \"product\": 1,\n            \"debt\": 600.04\n        },\n        {\n            \"product\": 2,\n            \"debt\": 150.03\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/network_links/"
+					},
+					"response": []
+				},
+				{
+					"name": "create exception level=3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Individual 3\",\n    \"previous_network_link\": 1,\n    \"contact_info\": {\n        \"email\": \"test3@test3.ov\",\n        \"country\": \"A\",\n        \"city\": \"X\",\n        \"street\": \"ABC\",\n        \"house_number\": \"12345\"\n    },\n    \"network_link_products\": [\n        {\n            \"product\": 1,\n            \"debt\": 600.04\n        },\n        {\n            \"product\": 2,\n            \"debt\": 1000.03\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/network_links/"
+					},
+					"response": []
+				},
+				{
+					"name": "read",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/network_links/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Factory\",\n    \"previous_network_link\": null,\n    \"contact_info\": {\n        \"email\": \"test@test.ov\",\n        \"country\": \"A\",\n        \"city\": \"X\",\n        \"street\": \"ABC\",\n        \"house_number\": \"123\"\n    },\n    \"network_link_products\": [\n        {\n            \"product\": 1,\n            \"debt\": 10000.04\n        },\n        {\n            \"product\": 2,\n            \"debt\": 150.03\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/network_links/1/update/"
+					},
+					"response": []
+				},
+				{
+					"name": "update dept is not change",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Factory\",\n    \"previous_network_link\": null,\n    \"dept\": 1000.00,\n    \"contact_info\": {\n        \"email\": \"test@test.ov\",\n        \"country\": \"A\",\n        \"city\": \"X\",\n        \"street\": \"ABC\",\n        \"house_number\": \"123\"\n    },\n    \"network_link_products\": [\n        {\n            \"product\": 1,\n            \"debt\": 10000.00\n        },\n        {\n            \"product\": 2,\n            \"debt\": 151000.03\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/network_links/1/update/"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/network_links/3/delete/"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/network_links/list/"
+					},
+					"response": []
+				},
+				{
+					"name": "list filter country",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/network_links/list/?country=B",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"network_links",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "B"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list with page_size=1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/network_links/list/?page_size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"network_links",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{token_active_user}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
