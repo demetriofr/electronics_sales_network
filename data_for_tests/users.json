@@ -1,0 +1,10 @@
+{
+  "data_test_user_admin_is_active_1": {
+    "email": "testov_1@test.ov",
+    "password": "123qwe456rty"
+  },
+  "data_test_user_admin_is_active_2": {
+    "email": "testov_2@test.ov",
+    "password": "123qwe456rty"
+  }
+}

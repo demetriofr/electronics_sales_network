@@ -1,0 +1,16 @@
+{
+  "data_test_network_link_1": {
+    "name": "Factory",
+    "contact_info": 1,
+    "network_link_products": [1, 2]
+  },
+  "data_test_network_link_2": {
+    "name": "Retail network 1"
+  },
+  "data_test_network_link_3": {
+    "name": "Individual 1"
+  },
+  "data_test_network_lind_exception_1": {
+    "name": "Individual 2"
+  }
+}

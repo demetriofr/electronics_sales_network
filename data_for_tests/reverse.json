@@ -1,0 +1,19 @@
+{
+  "CRUD": {
+    "POST": "create",
+    "GET": "read",
+    "PUT": "update",
+    "DELETE": "delete",
+    "LIST": "list"
+  },
+  "APP": {
+    "NL": {
+      "name": "network_links",
+      "nl": "network_links"
+    },
+    "PR": {
+      "name": "products",
+      "pr": "products"
+    }
+  }
+}
