@@ -2,6 +2,8 @@ from django.db import models
 
 
 class Product(models.Model):
+    """Model for save information about products."""
+
     name = models.CharField(max_length=255, verbose_name='название продукта')
     model = models.CharField(max_length=100, verbose_name='модель')
     release_date = models.DateField(verbose_name='дата выхода на рынок')
